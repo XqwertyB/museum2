@@ -27,7 +27,7 @@ class Product(models.Model):
     Status = models.BooleanField('Sotiladi', default=False)
     Data = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+    def __int__(self):
         return self.commodity
 class Pay(models.Model):
     Name = models.CharField('Tulov turi', max_length=30)
@@ -45,7 +45,7 @@ class Order(models.Model):
       Ship_id = models.ForeignKey(Shiper, on_delete=models.CASCADE, null=True)
       Ship_status = models.BooleanField(default=False)
 
-      def __str__(self):
+      def __int__(self):
           return self.client_id
 
 
@@ -57,5 +57,5 @@ class Order_detail(models.Model):
     Price = models.PositiveSmallIntegerField('Narxi', default=0)
     Quanty = models.PositiveSmallIntegerField('Ekspanat soni', default=0)
 
-    def __str__(self):
+    def __int__(self):
         return self.Price

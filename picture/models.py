@@ -9,7 +9,7 @@ class Picture_type(models.Model):
 class Pictures(models.Model):
     image = models.ImageField()
     name = models.CharField("Nomi", max_length=30)
-    type = models.ForeignKey(Picture_type, on_delete=models.CASCADE, null=True)
+    type = models.ForeignKey(Picture_type, on_delete=models.CASCADE,)
 
     def __str__(self):
         return self.name
