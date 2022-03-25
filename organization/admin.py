@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Organization, Faq
+from .models import Organization, Faq, Contacts
 from picture.models import (
     Pictures,
     Picture_type,
@@ -22,23 +22,53 @@ Commodity_images,
 Commodity_type,
 Commodity,
 )
+@admin.register(Organization)
+class OrganizationAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "tel_number1",)
+    list_display_links = ("name",)
+
+@admin.register(Faq)
+class FaqAdmin(admin.ModelAdmin):
+    list_display = ("query",)
+
+@admin.register(Contacts)
+class ContactsAdmin(admin.ModelAdmin):
+    list_display = ("name", "number")
+
+@admin.register(EMP)
 class EMPAdmin(admin.ModelAdmin):
-    list_display = ('FIO', 'Tel')
+    list_display = ('id','FIO', 'Tel')
+    list_display_links = ('FIO',)
 
-admin.site.register(Organization)
-admin.site.register(Faq)
-admin.site.register(Pictures)
-admin.site.register(Picture_type)
-admin.site.register(Departament)
-admin.site.register(Position)
-admin.site.register(EMP)
-admin.site.register(Client)
-admin.site.register(Pay)
-admin.site.register(Shiper)
-admin.site.register(Order)
-admin.site.register(Order_detail)
-admin.site.register(Commodity_images)
-admin.site.register(Commodity_type)
-admin.site.register(Commodity)
-admin.site.register(Product)
 
+
+@admin.register(Pictures)
+class PicturesAdmin(admin.ModelAdmin):
+    list_dispalay = ("name")
+@admin.register(Picture_type)
+class Picture_typeAdmin(admin.ModelAdmin):
+    list_dispalay = ("name")
+@admin.register(Departament)
+class DepartamentAdmin(admin.ModelAdmin):
+    list_dispaly = ("name",)
+@admin.register(Position)
+class PositionAdmin(admin.ModelAdmin):
+    list_display = ("name", "departament")
+
+@admin.register(Client)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ("FIO", "Tel")
+@admin.register(Pay)
+class PayAdmin(admin.ModelAdmin):
+    list_display = ("name")
+@admin.register(Shiper)
+class ShiperAdmin(admin.ModelAdmin):
+    list_dispaly = ("FIO", "TEL")
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_dispalay = ("client_id", "SumProce","Status")
+@admin.register(Order_detail)
+@admin.register(Commodity_images)
+@admin.register(Commodity_type)
+@admin.register(Commodity)
+@admin.register(Product)

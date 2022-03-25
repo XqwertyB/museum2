@@ -23,9 +23,9 @@ class Shiper(models.Model):
 
 class Product(models.Model):
     commodity = models.ForeignKey(Commodity, on_delete=models.CASCADE)
-    Price = models.PositiveSmallIntegerField(default=0)
+    Price = models.PositiveSmallIntegerField("Narxi", default=0)
     Status = models.BooleanField('Sotiladi', default=False)
-    Data = models.DateTimeField(auto_now_add=True)
+    Data = models.DateTimeField("Sana", auto_now_add=True)
 
     def __int__(self):
         return self.commodity
@@ -36,17 +36,18 @@ class Pay(models.Model):
         return self.Name
 
 class Order(models.Model):
-      client_id = models.ForeignKey(Client, on_delete=models.CASCADE)
+      client_id = models.ForeignKey("Mijoz", Client, on_delete=models.CASCADE,)
       Quanty = models.SmallIntegerField('Zakazlar soni', default=0)
       SumProce = models.SmallIntegerField('Narxi', default=0)
       Order_data = models.DateTimeField(auto_now=True)
-      Pay_type = models.ForeignKey(Pay, on_delete=models.CASCADE, null=True)
+      Pay_type = models.ForeignKey("Tulov turi", Pay, on_delete=models.CASCADE, null=True)
       Status = models.BooleanField('Statusi', default=False)
       Ship_id = models.ForeignKey(Shiper, on_delete=models.CASCADE, null=True)
       Ship_status = models.BooleanField(default=False)
 
-      def __int__(self):
+      def __init__(self,):
           return self.client_id
+          
 
 
 

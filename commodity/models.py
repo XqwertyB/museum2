@@ -21,8 +21,8 @@ class Commodity(models.Model):
     Info = RichTextField()
     Data_Found = models.DateTimeField()
     buy_or_not = models.BooleanField('Sotiladi', default=False)
-    Author = models.TextField()
-    Status = models.TextField()
+    Author = models.CharField("Avtor", max_length=50)
+    # Status = models.TextField()
     Images = models.ForeignKey(Commodity_images, on_delete=models.CASCADE)
     Type = models.ForeignKey(Commodity_type, on_delete=models.CASCADE)
 
