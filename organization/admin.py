@@ -58,17 +58,13 @@ class PositionAdmin(admin.ModelAdmin):
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     list_display = ("FIO", "Tel")
-@admin.register(Pay)
-class PayAdmin(admin.ModelAdmin):
-    list_display = ("name")
-@admin.register(Shiper)
-class ShiperAdmin(admin.ModelAdmin):
-    list_dispaly = ("FIO", "TEL")
+admin.site.register(Pay)
+admin.site.register(Shiper)
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_dispalay = ("client_id", "SumProce","Status")
-@admin.register(Order_detail)
-@admin.register(Commodity_images)
-@admin.register(Commodity_type)
-@admin.register(Commodity)
-@admin.register(Product)
+admin.site.register(Order_detail)
+admin.site.register(Commodity_images)
+admin.site.register(Commodity_type)
+admin.site.register(Commodity)
+admin.site.register(Product)

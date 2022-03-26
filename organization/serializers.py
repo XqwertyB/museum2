@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Organization, Faq
+from .models import Organization, Faq, Contacts
 from picture.models import Picture_type, Pictures
 
 
@@ -24,4 +24,9 @@ class Picture_typeList(serializers.ModelSerializer):
 class PicturesList(serializers.ModelSerializer):
     class Meta:
         model = Pictures
+        fields = '__all__'
+
+class ContactsList(serializers.ModelSerializer):
+    class Meta:
+        model = Contacts
         fields = '__all__'

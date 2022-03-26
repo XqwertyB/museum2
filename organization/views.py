@@ -45,3 +45,4 @@ class PictureView(APIView):
             return Response(serializer.data)
         except:
             return Response({"errors":"Hatolik bor"})
+
