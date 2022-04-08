@@ -23,7 +23,7 @@ class Commodity(models.Model):
     buy_or_not = models.BooleanField('Sotiladi', default=False)
     Author = models.CharField("Avtor", max_length=50)
     # Status = models.TextField()
-    Images = models.ForeignKey(Commodity_images, on_delete=models.CASCADE, upload_to="Images/")
+    Images = models.ForeignKey(Commodity_images, on_delete=models.CASCADE,)
     Type = models.ForeignKey(Commodity_type, on_delete=models.CASCADE)
 
     def __str__(self):
