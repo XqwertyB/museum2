@@ -1,6 +1,8 @@
+from importlib.metadata import files
 from rest_framework import serializers
 from .models import Organization, Faq, Contacts
 from picture.models import Picture_type, Pictures
+from commodity.models  import Commodity_images, Commodity_type, Commodity
 
 
 class OrganizationList(serializers.ModelSerializer):
@@ -29,4 +31,20 @@ class PicturesList(serializers.ModelSerializer):
 class ContactsList(serializers.ModelSerializer):
     class Meta:
         model = Contacts
+        fields = '__all__'
+
+
+class CommodityImgList(serializers.ModelSerializer):
+    class Meta:
+        model = Commodity_images
+        fields = '__all__'
+
+class CommodityTypeList(serializers.ModelSerializer):
+    class Meta:
+        model = Commodity_type
+        fields = '__all__'
+
+class CommodityList(serializers.ModelSerializer):
+    class Meta:
+        models = Commodity
         fields = '__all__'
