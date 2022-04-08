@@ -2,7 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 class Commodity_images(models.Model):
-    images = models.ImageField()
+    images = models.ImageField(upload_to="Images/")
     name = models.CharField(max_length=20)
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Commodity(models.Model):
     buy_or_not = models.BooleanField('Sotiladi', default=False)
     Author = models.CharField("Avtor", max_length=50)
     # Status = models.TextField()
-    Images = models.ForeignKey(Commodity_images, on_delete=models.CASCADE)
+    Images = models.ForeignKey(Commodity_images, on_delete=models.CASCADE, upload_to="Images/")
     Type = models.ForeignKey(Commodity_type, on_delete=models.CASCADE)
 
     def __str__(self):
