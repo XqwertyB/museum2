@@ -20,6 +20,7 @@ from .serializers import (
     CommodityImgList,
     CommodityTypeList,
     CommodityList,
+    PicturesList,
 )
 from organization import serializers
 
@@ -59,7 +60,7 @@ class PictureView(APIView):
     def get(self, request):
         try:
             img = Pictures.objects.all()
-            serializer = Picture_typeList(img, many=True)
+            serializer = PicturesList(img, many=True)
             return Response(serializer.data)
         except:
             return Response({"errors":"Hatolik bor"})
