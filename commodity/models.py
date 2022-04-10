@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 from ckeditor.fields import RichTextField
 
@@ -17,7 +18,7 @@ class Commodity_type(models.Model):
 
 class Commodity(models.Model):
     name = models.CharField(max_length=30)
-    Main_image = models.ImageField()
+    Main_image = models.ImageField(upload_to="images/")
     Info = RichTextField()
     Data_Found = models.DateTimeField()
     buy_or_not = models.BooleanField('Sotiladi', default=False)
