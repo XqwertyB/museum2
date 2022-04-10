@@ -57,7 +57,7 @@ class Picture_typeView(APIView):
 
 
 class PictureView(APIView):
-    def get(self, request):
+    def get(self, obj):
         try:
             img = Pictures.objects.all()
             serializer = PicturesList(img, many=True)
