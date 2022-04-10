@@ -8,7 +8,7 @@ class Picture_type(models.Model):
         return self.name
 
 class Pictures(models.Model):
-    image = models.ImageField("Img", upload_to="Images/")
+    image = models.ImageField("Img", upload_to="images/")
     name = models.CharField("Nomi", max_length=30)
     type = models.ForeignKey(Picture_type, on_delete=models.CASCADE,)
 

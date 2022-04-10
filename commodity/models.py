@@ -2,7 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 class Commodity_images(models.Model):
-    images = models.ImageField(upload_to="Images/")
+    images = models.ImageField(upload_to="images/")
     name = models.CharField(max_length=20)
 
     def __str__(self):
