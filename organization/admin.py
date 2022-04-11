@@ -66,5 +66,7 @@ class OrderAdmin(admin.ModelAdmin):
 admin.site.register(Order_detail)
 admin.site.register(Commodity_images)
 admin.site.register(Commodity_type)
-admin.site.register(Commodity)
+@admin.register(Commodity)
+class CommAdmin(admin.ModelAdmin):
+    list_display = ("name", "buy_or_not", "Type")
 admin.site.register(Product)

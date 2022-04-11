@@ -105,8 +105,8 @@ class CommodityTypeView(APIView):
 class CommodityView(APIView):
     def get(self, request):
         try:
-            com = Commodity.objects.all()
-            serializer = CommodityList(com, many = True)
+            comm = Commodity.objects.all()
+            serializer = CommodityList(comm, many = True)
             return Response(serializer.data)
         except:
             return Response({"error": "Hatolik bor"})

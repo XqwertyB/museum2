@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class Picture_type(models.Model):
@@ -10,6 +11,7 @@ class Picture_type(models.Model):
 class Pictures(models.Model):
     image = models.ImageField("Img", upload_to="images/")
     name = models.CharField("Nomi", max_length=30)
+    title = RichTextField('Info', null=True)
     type = models.ForeignKey(Picture_type, on_delete=models.CASCADE,)
 
     def __str__(self):
