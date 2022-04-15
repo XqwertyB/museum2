@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from commodity.models import (
-    Commodity_images,
     Commodity_type,
     Commodity,
 )
@@ -17,7 +16,6 @@ from .serializers import (
     OrganizationList, 
     FaqList, 
     Picture_typeList,
-    CommodityImgList,
     CommodityTypeList,
     CommodityList,
     PicturesList,
@@ -82,14 +80,6 @@ class Contact(APIView):
         except:
             return Response({"errors":"Hatolik bor"})
 
-class CommodityImgView(APIView):
-    def get(self, request):
-        try:
-            comimg = Commodity_images.objects.all()
-            serializer = CommodityImgList(comimg, many = True)
-            return Response(serializer.data)
-        except:
-            return Response({"error": "Hatolik bor"})
 
 
 class CommodityTypeView(APIView):

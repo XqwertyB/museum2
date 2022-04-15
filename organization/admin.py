@@ -18,7 +18,6 @@ Pay,
 Shiper,
 )
 from commodity.models import (
-Commodity_images,
 Commodity_type,
 Commodity,
 )
@@ -64,7 +63,6 @@ admin.site.register(Shiper)
 class OrderAdmin(admin.ModelAdmin):
     list_dispalay = ("client_id", "SumProce","Status")
 admin.site.register(Order_detail)
-admin.site.register(Commodity_images)
 admin.site.register(Commodity_type)
 @admin.register(Commodity)
 class CommAdmin(admin.ModelAdmin):
