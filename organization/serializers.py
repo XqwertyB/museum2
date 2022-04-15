@@ -46,5 +46,5 @@ class CommodityTypeList(serializers.ModelSerializer):
 
 class CommodityList(serializers.ModelSerializer):
     class Meta:
-        models = Commodity
+        model = Commodity
         fields = '__all__'
