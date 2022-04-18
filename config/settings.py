@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    
+    'modeltranslation',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'order',
     'commodity',
     'corsheaders',
-    'modeltranslation',
+    
     
 ]
 

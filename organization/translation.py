@@ -8,12 +8,12 @@ from picture.models import Picture_type, Pictures
 
 @register(Organization)
 class OrganizationTranslationOptions(TranslationOptions):
-    fields = ('name', 'info')
+    fields = ('name', 'info',)
 
 
 @register(Commodity)
 class CommodityTranslationOptions(TranslationOptions):
-    fields = ('name', 'info', 'author')
+    fields = ('name', 'info', 'author',)
 
 
 @register(Commodity_type)
@@ -26,4 +26,4 @@ class Picture_typeTranslationOptions(TranslationOptions):
 
 @register(Pictures)
 class PicturesTranslationOptions(TranslationOptions):
-    fields = ('name', 'title' )
+    fields = ('name', 'title', )
