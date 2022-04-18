@@ -33,4 +33,5 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('pages/', include('django.contrib.flatpages.urls')),
+    path('commodity/', include('django.contrib.flatpages.urls')),
 )
