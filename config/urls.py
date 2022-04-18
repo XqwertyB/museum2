@@ -20,12 +20,17 @@ from django.urls import path, include
 from django.urls import re_path as url
 from django.conf import settings
 from django.views.static import serve
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api-v1/', include('organization.urls'))
+    path('api-v1/', include('organization.urls')),
+    path('i18n/', include('django.conf.urls.i18n'))
 ]
 
+urlpatterns += i18n_patterns(
+    path('pages/', include('django.contrib.flatpages.urls')),
+)

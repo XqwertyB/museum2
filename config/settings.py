@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import gettext
 from msilib.schema import Media
 from pathlib import Path
 import os
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,11 +49,16 @@ INSTALLED_APPS = [
     'order',
     'commodity',
     'corsheaders',
+    'modeltranslation',
+    
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+      "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -59,6 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
+  
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -122,6 +130,13 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+gettext = lambda s: s
+LANGUAGES = (
+    ('ru', gettext('Russia')),
+    ('en', gettext('English')),
+    ('uz', gettext('Uzbek')),   
+)
 
 CORS_ALLOW_ALL_ORIGINS = True
 # Static files (CSS, JavaScript, Images)
