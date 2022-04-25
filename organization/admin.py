@@ -75,6 +75,6 @@ admin.site.register(Order_detail)
 admin.site.register(Commodity_type)
 @admin.register(Commodity)
 class ComAdmin(TranslationAdmin):
-    list_display = ('name','buy_or_not','type')
+    list_display = ()
 
 admin.site.register(Product)

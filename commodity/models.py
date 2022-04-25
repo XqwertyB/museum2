@@ -9,7 +9,7 @@ class Commodity_type(models.Model):
     status = models.BooleanField('Sotiladi', default=False)
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 class Commodity(models.Model):
     name = models.CharField(max_length=30)

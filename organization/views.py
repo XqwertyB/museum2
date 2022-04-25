@@ -34,14 +34,7 @@ class OrganizationView(APIView):
             return Response({"errors":"Hatolik bor"})
 
 
-class FaqView(APIView):
-    def get(self, request):
-        try:
-            faq = Faq.objects.all()
-            serializer = FaqList(faq, many=True)
-            return Response(serializer.data)
-        except:
-            return Response({"errors":"Hatolik bor"})
+
 
 
 class Picture_typeView(APIView):
