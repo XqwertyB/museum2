@@ -1,9 +1,7 @@
-from cProfile import label
-from tkinter import Widget
+
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
-from django import forms
+
 from .models import Organization, Faq, Contacts
 from picture.models import (
     Pictures,
