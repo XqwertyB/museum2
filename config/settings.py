@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import gettext
-from msilib.schema import Media
 from pathlib import Path
 import os
 
